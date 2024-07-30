@@ -6,6 +6,6 @@
 
   <category>
     <pattern>What are you</pattern>
-    <template>I'm your dad</template>
+    <template>I'm your Chatbot</template>
   </category>
 </aiml>
