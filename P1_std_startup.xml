@@ -2,7 +2,7 @@
 <aiml version="0.9.3" encoding="UTF-8">
   <category>
     <pattern>*</pattern>  <template>
-      <learn>"C:\Users\lkaus\OneDrive\Desktop\Aarambh\Nexus Info_Project1\P1_basic_chat.aiml"</learn>
+      <learn>P1_basic_chat.aiml</learn>
     </template>
   </category>
 </aiml>
