@@ -1,11 +1,112 @@
-<aiml version="0.9.3" encoding="UTF-8">
+<aiml version="1.0" encoding="UTF-8">
+<!-- Initial Greeting and Asking for Name -->
+<category>
+  <pattern>HELLO</pattern>
+  <template>
+    Well Hello User, what is your name?
+  </template>
+</category>
+
+
+<!-- Store the user's name -->
+<category>
+  <pattern>MY NAME IS *</pattern>
+  <template>
+    <set name="name"><star/></set>
+    ! Nice to meet you. How old are you?
+  </template>
+</category>
+
+
+<!-- User Provides Age -->
   <category>
-    <pattern>*</pattern>
-    <template>Well, Hello User</template>
+    <pattern>I AM * YEARS OLD</pattern>
+    <template>
+    <set name="age"><star/></set>
+    Great! What do you like to do in your free time?
+    </template>
+  </category>
+
+
+
+<!-- User Responds to Free Time -->
+  <category>
+    <pattern>I LIKE TO *</pattern>
+    <template>
+    <set name="hobby"><star/></set>
+      That sounds interesting! It's great to have hobbies.
+    </template>
+  </category>
+
+
+
+<!-- Respond with User's Name -->
+  <category>
+    <pattern>WHAT IS MY NAME</pattern>
+    <template>Your name is <get name="name"/>.</template>
+  </category>
+
+
+<!-- Respond with User's Age -->
+  <category>
+    <pattern>WHAT IS MY AGE</pattern>
+    <template>Your age is <get name="age"/>.</template>
+  </category>
+
+
+<!-- Respond with User's Hobby -->
+  <category>
+    <pattern>WHAT IS MY HOBBY</pattern>
+    <template>Your hobby is <get name="hobby"/>.</template>
+  </category>
+
+
+<!--Other Questions-->
+  <category>
+    <pattern>WHAT ARE YOU</pattern>
+    <template>I'm your Chatbot.</template>
   </category>
 
   <category>
-    <pattern>What are you</pattern>
-    <template>I'm your Chatbot</template>
+    <pattern>WHO ARE YOU</pattern>
+    <template>I'm your Chatbot.</template>
   </category>
+
+  <category>
+    <pattern>HOW ARE YOU</pattern>
+    <template>I'm just a program, but I'm doing great!</template>
+  </category>
+
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template>I'm your friendly chatbot, you can call me ROBO.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT CAN YOU DO</pattern>
+    <template>I can chat with you and answer your questions.</template>
+  </category>
+
+
+
+
+<!-- Farewell Message -->
+<category>
+  <pattern>EXIT</pattern>
+  <template>Adios Amigo!</template>
+</category>
+
+<!-- Farewell Message -->
+<category>
+  <pattern>BYE</pattern>
+  <template>Adios Amigo!</template>
+</category>
+
+<!-- Default Response -->
+<category>
+  <pattern>*</pattern>
+  <template>I'm having trouble understanding. Could you please rephrase?</template>
+</category>
+
+
 </aiml>
