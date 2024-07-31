@@ -92,6 +92,11 @@
 
 <!-- Farewell Message -->
 <category>
+  <pattern>BYE</pattern>
+  <template>Adios Amigo! If you have more questions, feel free to ask anytime.</template>
+</category>
+
+<category>
   <pattern>EXIT</pattern>
   <template>Adios Amigo!</template>
 </category>

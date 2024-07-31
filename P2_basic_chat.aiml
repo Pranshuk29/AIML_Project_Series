@@ -1,0 +1,204 @@
+<aiml version="1.0" encoding="UTF-8">
+<!-- Initial Greeting -->
+<category>
+  <pattern>HELLO</pattern>
+  <template>
+    Hello! What is your name?
+  </template>
+</category>
+
+<!-- Store the user's name -->
+<category>
+  <pattern>MY NAME IS *</pattern>
+  <template>
+    <set name="name"><star/></set>
+    ! Nice to meet you. Which college are you interested in applying to?
+  </template>
+</category>
+
+
+<!-- Store the college of interest -->
+<category>
+  <pattern>I WANT TO APPLY TO *</pattern>
+  <template>
+    <set name="college"><star/></set>
+    . Great choice, <get name="name"/>! I can help you with the admission process for <star/>.
+    Please also tell me your favorite subject or field of interest.
+  </template>
+</category>
+
+<!-- Store the user's favorite subject -->
+<category>
+  <pattern>MY FAVORITE SUBJECT IS *</pattern>
+  <template>
+    <set name="subject"><star/></set>
+    . That's Great! Knowing your interests can help with your application. Do you have any other questions about the admission process at <get name="college"/>?
+  </template>
+</category>
+
+<!-- Customized Admission Requirements -->
+<category>
+  <pattern>WHAT ARE THE ADMISSION REQUIREMENTS</pattern>
+  <template>
+    The admission requirements for <get name="college"/> include:
+    1. A completed application form
+    2. Transcripts from previous education
+    3. Letters of recommendation
+    4. A personal statement
+    5. An ID proof
+    6. Any additional documents specific to the program you are applying for.
+    What else would you like to know, <get name="name"/>?
+  </template>
+</category>
+
+<!-- Customized Admission Procedures -->
+<category>
+  <pattern>WHAT IS THE ADMISSION PROCEDURE</pattern>
+  <template>
+    The admission procedure for <get name="college"/> involves:
+    1. Submitting the application form online, including your educational qualifications.
+    2. Submitting all required documents
+    3. Attending an in-person interview.
+    4. Receiving an admission decision from the college.
+    Based on successful fulfillment of the above criteria, you will receive the offer letter. 
+    What would you like to ask about the admission process?
+  </template>
+</category>
+
+<!-- Customized Application Deadlines -->
+<category>
+  <pattern>WHAT IS THE APPLICATION DEADLINE</pattern>
+  <template>
+    The application deadline for the upcoming term at <get name="college"/> is 15th August, 2024 EOD. Make sure to submit all documents before this date.
+    What other information would you like to have?
+  </template>
+</category>
+
+<!-- Fee Structure -->
+<category>
+  <pattern>WHAT IS THE FEE STRUCTURE</pattern>
+  <template>
+    The fee structure varies by program. Generally, it includes tuition fees, registration fees, and other miscellaneous charges. For specific information, please check the college's official website.
+    Anything else you need help with, <get name="name"/>?
+  </template>
+</category>
+
+<!-- Scholarships -->
+<category>
+  <pattern>ARE THERE ANY SCHOLARSHIPS AVAILABLE</pattern>
+  <template>
+    Yes, there are several scholarships available for eligible students at <get name="college"/>. You can apply for merit-based, need-based, and other specific scholarships. Please visit the scholarship section on the college's website for more details.
+    What else would you like me to help you with?
+  </template>
+</category>
+
+
+<!-- Suggest Best College Based on Favorite Subject -->
+<category>
+  <pattern>SUGGEST A COLLEGE FOR *</pattern>
+  <template>
+    <think>Great choice! Considering your interest in <star/>,</think>
+    I recommend looking into the following colleges for <get name="subject"/>:
+    1. College A: Known for its strong <get name="subject"/> program.
+    2. College B: Offers excellent research opportunities in <get name="subject"/>.
+    3. College C: Has a well-rounded curriculum for <get name="subject"/>.
+    Do you have any other questions, <get name="name"/>?
+  </template>
+</category>
+
+
+
+
+
+<!-- Remember User Details -->
+<category>
+  <pattern>WHAT IS MY NAME</pattern>
+  <template>Your name is <get name="name"/>.</template>
+</category>
+
+<category>
+  <pattern>WHAT COLLEGE DO I WANT TO APPLY TO</pattern>
+  <template>You want to apply to <get name="college"/>.</template>
+</category>
+
+<category>
+  <pattern>WHAT IS MY FAVORITE SUBJECT</pattern>
+  <template>Your favorite subject is <get name="subject"/>.</template>
+</category>
+
+<!-- Customized Queries for Documents -->
+<category>
+  <pattern>WHAT DOCUMENTS DO I NEED FOR *</pattern>
+  <template>
+    <set name="college"><star/></set>
+    The documents required for admission to <get name="college"/> include:
+    1. A completed application form
+    2. Transcripts from previous education
+    3. Letters of recommendation
+    4. A personal statement
+    5. An ID proof
+    6. Any additional documents specific to the program you are applying for.
+    Is there anything else you need, <get name="name"/>?
+  </template>
+</category>
+
+
+
+<!-- User Interaction-Contextual Understanding for Personalized Responses -->
+<category>
+  <pattern>WHAT IS YOUR NAME</pattern>
+  <template>I'm your friendly chatbot, you can call me CollegeBuddy.</template>
+</category>
+
+<category>
+  <pattern>WHO ARE YOU</pattern>
+  <template>I'm your Chatbot, here to assist you with college admission queries.</template>
+</category>
+
+<category>
+  <pattern>HOW ARE YOU</pattern>
+  <template>I'm just a program, but I'm doing great!</template>
+</category>
+
+<category>
+  <pattern>WHAT CAN YOU DO</pattern>
+  <template>I can help you with questions about the college admission process, requirements, deadlines, and more.</template>
+</category>
+
+
+
+
+<!-- Farewell Message -->
+<category>
+  <pattern>BYE</pattern>
+  <template>Adios Amigo! If you have more questions, feel free to ask anytime.</template>
+</category>
+
+<category>
+  <pattern>EXIT</pattern>
+  <template>Adios Amigo! If you have more questions, feel free to ask anytime.</template>
+</category>
+
+<!-- Default Response & Error Handling -->
+<category>
+  <pattern>*</pattern>
+  <template>I'm having trouble understanding. Could you please rephrase? (PS: I'm specifically designed to answer questions related to college admission.)
+ </template>
+</category>
+
+<!-- Specific Error Handling for Common Queries -->
+<category>
+  <pattern>I HAVE A QUESTION</pattern>
+  <template>
+    Sure, <get name="name"/>! What would you like to know about the admission process at <get name="college"/>?
+  </template>
+</category>
+
+<category>
+  <pattern>HOW CAN I APPLY</pattern>
+  <template>
+    You can apply to <get name="college"/> by submitting the online application form and providing the necessary documents. For a detailed procedure, you can ask "What is the admission procedure for <get name="college"/>?"
+  </template>
+</category>
+
+</aiml>
